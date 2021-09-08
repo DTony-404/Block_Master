@@ -24,7 +24,7 @@ export default class Login extends Component {
     }
 
     iniciarSesion = async e => {
-        console.log(`Bienvenido ${this.state.form.email}`)
+        alert(`Bienvenido ${this.state.form.email}`)
     }
 
     handelSubmit = (e) => {

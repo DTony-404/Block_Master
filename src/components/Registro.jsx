@@ -47,6 +47,7 @@ export default class Registro extends Component {
         }).then(response => {
             alert('Usuario Registrado')
         }).catch(error => {
+            alert('Usuario no existe')
             console.log(error.message)
         })
     }
