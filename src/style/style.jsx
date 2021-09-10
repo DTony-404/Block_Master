@@ -162,11 +162,26 @@ border: 3px solid #0F0E17;
 
 & > div {
     border: 0.1px solid yellow;
-    height:64px;
+    height:54px;
     width: 114px;
     position: relative;
     top: 24px;
     border-radius: 0px 40px 40px 0px;
-    background-color: rgb(0, 0, 0, 0.5)
+    background-color: rgb(0, 0, 0, 0.5);
+
+    & > span {
+        font-size: 28px;
+        color:#FFFFFE;
+        text-align: center;
+        width: 35px;
+        height: 34px;
+        position: relative;
+        line-height: 34px;
+        font-family: Montserrat;
+        letter-spacing: 0.01em;
+        font-weight: bold;
+        left: 64px;
+        top: 10px;
+    }
 }
 `

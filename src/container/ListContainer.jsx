@@ -21,7 +21,9 @@ export default class ListContainer extends Component {
                 {
                 this.state.peli.map((movie) => (
                     <ClasiCards background = {movie.potster}>
-                        <div></div>
+                        <div>
+                            <span>21</span>
+                        </div>
                     </ClasiCards>
                 ))
                 }
