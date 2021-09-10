@@ -48,7 +48,7 @@ export default class Registro extends Component {
                     alert('Usuario no existe')
                     console.log(error.message)
                 })
-                }else{alert('llene todos los campos')}
+            }else{alert('llene todos los campos')}
         }
         return (
             <BoxForm>

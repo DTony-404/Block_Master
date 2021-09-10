@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Navbar, Carousel} from 'react-bootstrap'
 
 // export const NavBarSecondary = styled.nav`
 // height: 80px;
@@ -44,8 +44,11 @@ import {Form, Button} from 'react-bootstrap'
 // }
 // `
 
-export const BoxSearch = styled.div`
+export const BoxBackgroun = styled(Navbar)`
+background-color: #0F0E17;
+`
 
+export const BoxSearch = styled.div`
 & > button{
     height: 36px;
     width: 50px;
@@ -112,5 +115,29 @@ width: 70vw;
 
 @media(min-width: 1000px){
     width: 25vw;
+}
+`
+// Carousel 
+
+export const BoxCarouselLocal = styled.div`
+display: flex;
+align-items:center;
+align-content:center;
+justify-content: center;
+`
+
+export const CarouselLocal = styled(Carousel)`
+height: 320px;
+width: 98vw;
+margin-top: 80px;
+display: flex;
+border-radius: 20px;
+`
+
+export const CarouselLocalImg = styled(Carousel.Item)`
+& > img{
+    border-radius: 20px;
+    height: 320px;
+    width: 98vw;
 }
 `
