@@ -161,14 +161,20 @@ border-radius: 8px;
 border: 3px solid #0F0E17;
 
 & > div {
-    border: 0.1px solid yellow;
+    border: 0.1px solid rgba(247, 202, 24, 0.5);
     height:54px;
     width: 114px;
     position: relative;
     top: 24px;
     border-radius: 0px 40px 40px 0px;
     background-color: rgb(0, 0, 0, 0.5);
-
+    & > img {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        top: 2.5px;
+        left: 14px;
+    }
     & > span {
         font-size: 28px;
         color:#FFFFFE;
@@ -180,8 +186,8 @@ border: 3px solid #0F0E17;
         font-family: Montserrat;
         letter-spacing: 0.01em;
         font-weight: bold;
-        left: 64px;
-        top: 10px;
+        left: 44px;
+        top: 8px;
     }
 }
 `

@@ -22,7 +22,8 @@ export default class ListContainer extends Component {
                 this.state.peli.map((movie) => (
                     <ClasiCards background = {movie.potster}>
                         <div>
-                            <span>21</span>
+                            <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1631311329/BlockMaster/Vector_th1qzv.png" alt="" />
+                            <span>{movie.puntuacion}</span>
                         </div>
                     </ClasiCards>
                 ))
