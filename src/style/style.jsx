@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import {Form, Button} from 'react-bootstrap'
+
 
 export const NavBar = styled.nav`
 height: 80px;
@@ -38,3 +40,31 @@ flex-direction: column;
 flex-wrap: nowrap;
 `
 // From and Login
+export const BoxForm = styled.div`
+height: 80vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+justify-content: center;
+`
+export const BoxFormContent = styled(BoxForm)`
+height: auto;
+border: 1px solid #FFA903;
+border-radius: 20px;
+padding: 20px;
+background-color: #000000;
+`
+export const InputForm = styled(Form.Control)`
+width: 25vw;
+border: 1px solid #FFA903;
+margin-bottom: 10px;
+`
+export const ButtonFrom = styled(Button)`
+background-color: #0E3FA9;
+color: #FFA903;
+width: 15vw;
+`
+export const ButtonGoogle = styled(ButtonFrom)`
+width: 25vw;
+`

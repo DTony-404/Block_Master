@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import {BoxForm, InputForm, ButtonFrom, ButtonGoogle, BoxFormContent} from '../style/style'
 
 export default class Login extends Component {
 
@@ -33,61 +34,62 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div>
-                <h1 className="form-signin">
-                    Inicio de Sesión
-                </h1>
+            <BoxForm>
+                <BoxFormContent>
+                    <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" alt="" />
+                    <h1 className="text-light">
+                        Inicio de Sesión
+                    </h1>
 
-                <input 
-                    type="text" 
-                    id="inputEmail"
-                    name="email"
-                    className="form-control mt-1"
-                    placeholder="Email"
-                    required=""
-                    onChange={this.handleChange}
-                />
-                <input
-                    type="Password"
-                    id="inputPassword"
-                    className="form-control mt-1"
-                    placeholder="Contreña"
-                    name="password"
-                    required=""
-                    onChange={this.handleChange}
-                />
+                    <InputForm 
+                        type="text" 
+                        id="inputEmail"
+                        name="email"
+                        className="form-control mt-1"
+                        placeholder="Email"
+                        required=""
+                        onChange={this.handleChange}
+                    />
+                    <InputForm
+                        type="Password"
+                        id="inputPassword"
+                        className="form-control mt-1"
+                        placeholder="Contreña"
+                        name="password"
+                        required=""
+                        onChange={this.handleChange}
+                    />
 
-                <button
-                    type="submit"
-                    className="btn btn-primary btn-block"
-                    onClick={() => this.iniciarSesion()}
-                >
-                    Login
-                </button>
-
-                <div className="">
-                    <p>Login with social networks</p>
-
-                    <div className="google-btn btn-primary">
-                        <div className="google-icon-wrapper">
-                            <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-                        </div>
-                        <p className="btn-text">
-                            <b>Sign in with google</b>
-                        </p>
-                    </div>
-                </div>
-                    <Link
-                    to="/registro"
+                    <ButtonFrom
+                        type="submit"
+                        className="btn btn-primary btn-block"
+                        onClick={() => this.iniciarSesion()}
                     >
-                    Create new account
-                </Link>
-                <Link
-                    to="/"
-                >
-                    Volver al inicio
-                </Link>
-            </div>
+                        Login
+                    </ButtonFrom>
+
+                    <div className="">
+                        <h6 className="text-light text-center mt-3">Login with social networks</h6>
+
+                        <ButtonGoogle className="google-btn btn-primary">
+                            <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
+                            <b> Sign in with google</b>
+                        </ButtonGoogle>
+                    </div>
+                        <Link
+                        to="/registro"
+                        className="mt-3 text-light"
+                        >
+                        Create new account
+                    </Link>
+                    <Link
+                        className="mt-1 text-light"
+                        to="/"
+                    >
+                        Volver al inicio
+                    </Link>
+                </BoxFormContent>
+            </BoxForm>
         )
     }
 }

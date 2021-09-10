@@ -3,6 +3,7 @@ import md5 from 'md5'
 import uuid from 'react-uuid'
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {BoxForm, InputForm, ButtonFrom, BoxFormContent} from '../style/style'
 
 const baseUrl = "https://api-block-master.herokuapp.com/usuario"
 
@@ -49,29 +50,38 @@ export default class Registro extends Component {
 
     render() {
         return (
-            <div>
+            <BoxForm>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>
-                        ¡Registrate en nuestro sistema!
-                    </h1>
-                <div>
-                    <img src="" id="icon" alt="User Icon" width="100px" / > <h3>Crea una cuenta</h3>
-                </div>
+                    < BoxFormContent>
+                        <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" id="icon" alt="User Icon" width="100px" / > 
+                        
+                        <h1 className="text-light">
+                            ¡Registrate en nuestro sistema!
+                        </h1>
 
-                <input type="text" placeholder="Nombre" name="nombre" className="form-control" autoComplete="off" onChange={this.handleChange} />
+                        <h3 className="text-light">Crea una cuenta</h3>
 
-                <input type="email" placeholder="Email" name="username" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
-                <input type="password" placeholder="Password" name="password" className="form-control" autoComplete="off" onChange={this.handleChange} />
+                        <InputForm type="text" placeholder="Nombre" name="nombre" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
-                <br />
+                        <InputForm type="email" placeholder="Email" name="username" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
-                <button type="submit" className="btn btn-primary btn-block mb-1" onClick={() => this.registroUsuario()}>Registro</button>
+                        <InputForm type="password" placeholder="Password" name="password" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
-                <br />
-                <Link to="/login">Already registered?</Link>
+                        <br />
+
+                        <ButtonFrom type="submit" className="btn btn-primary btn-block mb-1" onClick={() => this.registroUsuario()}>Registro</ButtonFrom>
+
+                        <br />
+                        <Link 
+                            to="/login"
+                            className="text-light"
+                        >
+                            Already registered?
+                        </Link>
+                        </ BoxFormContent>
                 </form>
-            </div>
+            </BoxForm>
         )
     }
 }
