@@ -34,43 +34,43 @@ export default class Registro extends Component {
         e.preventDefault()
     }
 
-    registroUsuario = async () => {
-        await axios.post(baseUrl, {
-            id:uuid,
-            nombre: this.state.form.nombre,
-            username: this.state.form.username,
-            password: md5(this.state.form.password)
-        }).then(response => {
-            alert('Usuario Registrado')
-        }).catch(error => {
-            alert('Usuario no existe')
-            console.log(error.message)
-        })
-    }
-
     render() {
+        const registroUsuario = async () => {
+            if(this.state.form.nombre && this.state.form.username && this.state.form.password !== ''){
+                await axios.post(baseUrl, {
+                    id:uuid,
+                    nombre: this.state.form.nombre,
+                    username: this.state.form.username,
+                    password: md5(this.state.form.password)
+                }).then(response => {
+                    alert('Usuario Registrado')
+                }).catch(error => {
+                    alert('Usuario no existe')
+                    console.log(error.message)
+                })
+                }else{alert('llene todos los campos')}
+        }
         return (
             <BoxForm>
                 <form onSubmit={this.handleSubmit}>
                     < BoxFormContent>
                         <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" id="icon" alt="User Icon" width="100px" / > 
                         
-                        <h1 className="text-light">
+                        <h2 className="text-light text-center">
                             ¡Registrate en nuestro sistema!
-                        </h1>
+                        </h2>
 
-                        <h3 className="text-light">Crea una cuenta</h3>
-
+                        <h4 className="text-light">Crea una cuenta</h4>
 
                         <InputForm type="text" placeholder="Nombre" name="nombre" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
-                        <InputForm type="email" placeholder="Email" name="username" className="form-control" autoComplete="off" onChange={this.handleChange} />
+                        <InputForm type="text" placeholder="Nombre de usuario" name="username" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
                         <InputForm type="password" placeholder="Password" name="password" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
                         <br />
 
-                        <ButtonFrom type="submit" className="btn btn-primary btn-block mb-1" onClick={() => this.registroUsuario()}>Registro</ButtonFrom>
+                        <ButtonFrom type="submit" className="btn btn-primary btn-block mb-1" onClick={() => registroUsuario()}>Registro</ButtonFrom>
 
                         <br />
                         <Link 

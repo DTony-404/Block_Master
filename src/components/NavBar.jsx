@@ -1,20 +1,43 @@
-import { NavBar } from "../style/style";
+// import { NavBarLocal } from "../style/style";
 import {Link} from 'react-router-dom'
-
+import { BiSearch } from "react-icons/bi";
+import { Container, Navbar } from "react-bootstrap";
+import {BoxSearch} from '../style/style'
 export default function NavBarTop(){
     return(
-        <NavBar>
+        <Navbar>
+            <Container>
             <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" alt="" />
-            <p>Lola</p>
-            <p>Lola</p>
-            <p>Lola</p>
+
+            <Navbar.Brand>
+            <Link>Todas</Link>
+            </Navbar.Brand>
+            <Navbar.Brand>
+            <Link>
+            Más valoradas
+            </Link>
+            </Navbar.Brand>
+            <Navbar.Brand>
+            <Link>Menos valoradas</Link>
+            </Navbar.Brand>
+
+            <BoxSearch>
             <input placeholder="search" />
-            <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1631064166/BlockMaster/WhatsApp_Image_2021-09-07_at_8.22.35_PM_c6og12.jpg" alt="" />
+            <button>
+                <i>
+                <BiSearch />
+                </i>
+            </button>    
+            </BoxSearch>
+
+            <Navbar.Brand>
             <Link
                 to="/login"
             >
                 Login
             </Link>
-        </NavBar>
+            </Navbar.Brand>
+            </Container>
+        </Navbar>
     )
 }
