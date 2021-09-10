@@ -46,6 +46,7 @@ import {Form, Button, Navbar, Carousel} from 'react-bootstrap'
 
 export const BoxBackgroun = styled(Navbar)`
 background-color: #0F0E17;
+height: 112px;
 `
 
 export const BoxSearch = styled.div`
@@ -129,7 +130,7 @@ justify-content: center;
 export const CarouselLocal = styled(Carousel)`
 height: 320px;
 width: 98vw;
-margin-top: 80px;
+margin-top: 120px;
 display: flex;
 border-radius: 20px;
 `

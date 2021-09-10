@@ -8,9 +8,6 @@ import React, { Component } from 'react'
 
 export default class NavBarTop extends Component{
     render(){
-
-
-
     return(
             <BoxBackgroun fixed="top">
                 <Container>
