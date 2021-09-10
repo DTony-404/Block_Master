@@ -12,17 +12,16 @@ export default class NavBarTop extends Component{
             <BoxBackgroun fixed="top">
                 <Container>
                     <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" alt="" />
-
                     <Navbar.Brand>
-                    <Link>Todas</Link>
+                        <a>Todas</a>
                     </Navbar.Brand>
                     <Navbar.Brand>
-                    <Link>
-                    Más valoradas
-                    </Link>
+                        <a>
+                        Más valoradas
+                        </a>
                     </Navbar.Brand>
                     <Navbar.Brand>
-                    <Link>Menos valoradas</Link>
+                        <a>Menos valoradas</a>
                     </Navbar.Brand>
 
                     <BoxSearch>
