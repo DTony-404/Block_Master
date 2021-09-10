@@ -5,7 +5,7 @@ export default async function search(){
     console.log(exp2.input)
     let dato;
     fetch("https://api-block-master.herokuapp.com/Peliculas/").then((resp) => resp.json()).then((data) => {
-        dato = data
+        console.log(data)
     })
     return{dato}
     

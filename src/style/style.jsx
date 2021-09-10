@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Form, Button, Navbar, Carousel} from 'react-bootstrap'
+import {Form, Button, Navbar, Carousel, Figure} from 'react-bootstrap'
 
 // export const NavBarSecondary = styled.nav`
 // height: 80px;
@@ -140,5 +140,26 @@ export const CarouselLocalImg = styled(Carousel.Item)`
     border-radius: 20px;
     height: 320px;
     width: 98vw;
+}
+`
+// Cards 
+
+export const BoxContainerCards = styled.div`
+width: 80vw;
+height: 50vh;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+`
+export const ClasiCards = styled.div`
+background-image: url("${props => props.background}");
+background-size: 220px 330px;
+height: 330px;
+width: 220px;
+margin: 24px;
+
+& > h1 {
+    z-index: 999;
+    color: red,
 }
 `
