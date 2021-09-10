@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Form, Button, Navbar, Carousel, Figure} from 'react-bootstrap'
+import {Form, Button, Navbar, Carousel} from 'react-bootstrap'
 
 // export const NavBarSecondary = styled.nav`
 // height: 80px;
@@ -157,9 +157,16 @@ background-size: 220px 330px;
 height: 330px;
 width: 220px;
 margin: 24px;
+border-radius: 8px;
+border: 3px solid #0F0E17;
 
-& > h1 {
-    z-index: 999;
-    color: red,
+& > div {
+    border: 0.1px solid yellow;
+    height:64px;
+    width: 114px;
+    position: relative;
+    top: 24px;
+    border-radius: 0px 40px 40px 0px;
+    background-color: rgb(0, 0, 0, 0.5)
 }
 `
