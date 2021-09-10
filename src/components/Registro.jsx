@@ -10,11 +10,8 @@ export default class Registro extends Component {
     constructor(){
         super();
         this.state = {
-            data: [],
             form: {
                 id: '',
-                apellido_paterno: '',
-                apellido_materno: '',
                 nombre: '',
                 username: '',
                 password: ''
@@ -24,23 +21,21 @@ export default class Registro extends Component {
 
     handleChange = async e => {
         await this.setState({
-            from: {
+            form: {
                 ...this.state.form,
                 [e.target.name]: e.target.value
             }
         })
-        console.log(this.state.from)
+        console.log(this.state.form)
     }
 
-    handelSubmit = async e => {
+    handleSubmit = async e => {
         e.preventDefault()
     }
 
     registroUsuario = async () => {
         await axios.post(baseUrl, {
             id:uuid,
-            apellido_paterno: this.state.form.apellido_paterno,
-            apellido_materno: this.state.form.apellido_materno,
             nombre: this.state.form.nombre,
             username: this.state.form.username,
             password: md5(this.state.form.password)
@@ -62,19 +57,16 @@ export default class Registro extends Component {
                 <div>
                     <img src="" id="icon" alt="User Icon" width="100px" / > <h3>Crea una cuenta</h3>
                 </div>
-                <input type="text" placeholder="Apellido paterno" name="apellido_paterno" className="form-control" autoComplete="off" onChange={this.handleChange} />
-
-                <input type="text" placeholder="Apellido materno" name="apellido_materno" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
                 <input type="text" placeholder="Nombre" name="nombre" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
-                <input type="email" placeholder="Email" name="userName" className="form-control" autoComplete="off" onChange={this.handleChange} />
+                <input type="email" placeholder="Email" name="username" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
                 <input type="password" placeholder="Password" name="password" className="form-control" autoComplete="off" onChange={this.handleChange} />
 
                 <br />
 
-                <button type="submit" className="btn btn-primary btn-block mb-1" onclick={() => this.registroUsuario()}>Registro</button>
+                <button type="submit" className="btn btn-primary btn-block mb-1" onClick={() => this.registroUsuario()}>Registro</button>
 
                 <br />
                 <Link to="/login">Already registered?</Link>

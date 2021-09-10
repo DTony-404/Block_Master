@@ -7,8 +7,8 @@ export default class Login extends Component {
         super();
         this.state = {
             form: {
-                email:"",
-                password:""
+                email: '',
+                password: ''
             }
         }
     }
@@ -23,7 +23,7 @@ export default class Login extends Component {
         console.log(this.state.form) //imprimir todo el estado 
     }
 
-    iniciarSesion = async e => {
+    iniciarSesion = () => {
         alert(`Bienvenido ${this.state.form.email}`)
     }
 
@@ -41,50 +41,52 @@ export default class Login extends Component {
                 <input 
                     type="text" 
                     id="inputEmail"
+                    name="email"
                     className="form-control mt-1"
                     placeholder="Email"
                     required=""
                     onChange={this.handleChange}
                 />
-                  <input
-                        type="Password"
-                        id="inputPassword"
-                        className="form-control mt-1"
-                        placeholder="Contreña"
-                        required=""
-                        onChange={this.handleChange}
-                    />
+                <input
+                    type="Password"
+                    id="inputPassword"
+                    className="form-control mt-1"
+                    placeholder="Contreña"
+                    name="password"
+                    required=""
+                    onChange={this.handleChange}
+                />
 
-                    <button
-                        type="submit"
-                        className="btn btn-primary btn-block"
-                        onClick={() => this.iniciarSesion}
-                    >
-                        Login
-                    </button>
+                <button
+                    type="submit"
+                    className="btn btn-primary btn-block"
+                    onClick={() => this.iniciarSesion()}
+                >
+                    Login
+                </button>
 
-                    <div className="">
-                        <p>Login with social networks</p>
+                <div className="">
+                    <p>Login with social networks</p>
 
-                        <div className="google-btn btn-primary">
-                            <div className="google-icon-wrapper">
-                                <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-                            </div>
-                            <p className="btn-text">
-                                <b>Sign in with google</b>
-                            </p>
+                    <div className="google-btn btn-primary">
+                        <div className="google-icon-wrapper">
+                            <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                         </div>
+                        <p className="btn-text">
+                            <b>Sign in with google</b>
+                        </p>
                     </div>
-                      <Link
-                        to="/registro"
-                       >
-                        Create new account
-                    </Link>
+                </div>
                     <Link
-                      to="/"
+                    to="/registro"
                     >
-                        Volver al inicio
-                    </Link>
+                    Create new account
+                </Link>
+                <Link
+                    to="/"
+                >
+                    Volver al inicio
+                </Link>
             </div>
         )
     }
