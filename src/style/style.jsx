@@ -49,7 +49,7 @@ background-color: #0F0E17;
 height: 112px;
 width: 100vw;
 position: fixed;
-z-index: 998;
+z-index: 997;
 `
 
 export const BoxSearch = styled.div`
@@ -159,7 +159,7 @@ justify-content: center;
     background-color: #FED941;
     margin-right: 10px;
     position: fixed;
-    z-index: 999;
+    z-index: 998;
     top: 38px;
     right: 150px;
 }
@@ -174,8 +174,9 @@ border-radius: 8px;
 border: 3px solid #0F0E17;
 
 & > div {
-    border: 1px solid;
-    border-color: ${props => props.border};
+    border-top: 2px solid ${props => props.border};
+    border-bottom: 2px solid ${props => props.border};
+    border-right: 2px solid ${props => props.border};
     height:54px;
     width: 114px;
     position: relative;
@@ -204,4 +205,34 @@ border: 3px solid #0F0E17;
         top: 8px;
     }
 }
+`
+// Description
+export const Contenedor = styled.div`
+height:100vh;
+width: 100vw;
+display: ${props => props.descripciones};
+justify-content: center;
+align-items: center;
+align-content: center;
+position: fixed;
+background-color:rgb(0, 0, 0, 0.8);;
+z-index:999;
+top: 0px;
+`
+export const BotonX = styled.button`
+height: 100px;
+width: 100px;
+font-size: 30px;
+color: #fff;
+background-color: transparent;
+border: none;
+position: absolute;
+right: 60px;
+top: 100px;
+`
+export const BoxDescription = styled(Contenedor)`
+height: auto;
+width: 100vw;
+position: relative;
+background-color: transparent;
 `
