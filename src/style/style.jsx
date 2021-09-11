@@ -47,17 +47,12 @@ import {Form, Button, Navbar, Carousel} from 'react-bootstrap'
 export const BoxBackgroun = styled(Navbar)`
 background-color: #0F0E17;
 height: 112px;
+width: 100vw;
+position: fixed;
+z-index: 998;
 `
 
 export const BoxSearch = styled.div`
-& > button{
-    height: 36px;
-    width: 50px;
-    border: 0.5px solid #FED941;
-    border-radius: 0px 8px 8px 0px;
-    background-color: #FED941;
-    margin-right: 10px;
-}
 
 & > input {
 height: 36px;
@@ -66,7 +61,7 @@ padding: 11px 12px;
 border: 2px solid #FED941;
 box-sizing: border-box;
 border-radius: 8px 0px 0px 8px;
-margin-left: 40px;}
+};
 `
 export const BoxComponents = styled.div`
 display: flex;
@@ -79,11 +74,15 @@ height: 80vh;
 display: flex;
 flex-direction: column;
 align-items: center;
+align-content: center;
 justify-content: center;
 margin-top: 20px;
+position:relative;
+left: 15vw;
 `
 export const BoxFormContent = styled(BoxForm)`
 height: auto;
+width: 45vw;
 border: 1px solid #FFA903;
 border-radius: 20px;
 padding: 20px;
@@ -151,6 +150,19 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
+
+& > button{
+    height: 36px;
+    width: 50px;
+    border: 0.5px solid #FED941;
+    border-radius: 0px 8px 8px 0px;
+    background-color: #FED941;
+    margin-right: 10px;
+    position: fixed;
+    z-index: 999;
+    top: 38px;
+    right: 150px;
+}
 `
 export const ClasiCards = styled.div`
 background-image: url("${props => props.background}");

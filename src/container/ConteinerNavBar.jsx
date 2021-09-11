@@ -1,6 +1,5 @@
 // import { NavBarLocal } from "../style/style";
 import {Link} from 'react-router-dom'
-import { BiSearch } from "react-icons/bi";
 import { Container, Navbar } from "react-bootstrap";
 import { BoxSearch, BoxBackgroun } from '../style/style'
 import ListContainer from './ListContainer'
@@ -9,10 +8,22 @@ import SectionCarrusel from '../components/SectionCarrusel'
 import React, { Component } from 'react'
 
 export default class NavBarTop extends Component{
+    constructor(){
+        super()
+        this.state = {
+            "search": ''
+        }
+    }
+
+    handleChange = async ({target}) => {
+        await this.setState({
+            search: target.value
+        })
+    }
     render(){
     return(
             <div>
-            <BoxBackgroun fixed="top">
+            <BoxBackgroun>
                 <Container>
                     <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" alt="" />
                     <Navbar.Brand>
@@ -28,12 +39,8 @@ export default class NavBarTop extends Component{
                     </Navbar.Brand>
 
                     <BoxSearch>
-                    <input placeholder="search" />
-                    <button>
-                        <i>
-                        <BiSearch />
-                        </i>
-                    </button>    
+                    <input placeholder="search" onChange={this.handleChange} />
+                      
                     </BoxSearch>
 
                     <Navbar.Brand>
@@ -48,7 +55,10 @@ export default class NavBarTop extends Component{
 
             <SectionCarrusel />
 
-            <ListContainer />
+            <ListContainer
+                key={"lola"}
+                search={this.state.search}
+            />
          </div>
     )}
 }
