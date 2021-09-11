@@ -1,6 +1,16 @@
-// import { useState } from 'react'
 import {Carousel} from 'react-bootstrap'
 import {CarouselLocal, CarouselLocalImg, BoxCarouselLocal} from '../style/style'
+import { FiPlus } from "react-icons/fi";
+import { FaPlay } from "react-icons/fa";
+
+import {BoxDescription,
+        BoxImg,
+        BoxPuntuacionImg,
+        BotonVerYa,
+        BotonVerMas,
+        ContenedorVide,
+        BotonX
+        } from '../style/style'
 
 
 export default function ControlledCarousel() {
@@ -15,34 +25,40 @@ export default function ControlledCarousel() {
             <CarouselLocal>
                 <CarouselLocalImg>
                     <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlu-5sicFuHii8BAVf-lwWzS0D4bOJ00mHAQ&usqp=CAU"
+                    src="https://www.themoviedb.org/t/p/original/3FKof7vlY8yPcCYjGmmWaj2NyTq.jpg"
                     alt="First slide"
                     />
                     <Carousel.Caption>
-                    <button>LOLA</button>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <div className="d-flex flex-direction-row">
+                            <BotonVerYa className="mt-5 m-1"><FaPlay className="m-1" /> Ver ahora </BotonVerYa>
+                            <BotonVerMas className="mt-5 m-1"><FiPlus className="m-1" /> Ver mas</BotonVerMas>
+                        </div>
                     </Carousel.Caption>
                 </CarouselLocalImg>
                 <CarouselLocalImg>
                     <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlu-5sicFuHii8BAVf-lwWzS0D4bOJ00mHAQ&usqp=CAU"
+                    src="https://www.themoviedb.org/t/p/original/mFIAc5UvZ8frJ4GcAiywo1IlI9q.jpg"
                     alt="Second slide"
                     />
 
                     <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div className="d-flex flex-direction-row">
+                            <BotonVerYa className="mt-5 m-1"><FaPlay className="m-1" /> Ver ahora </BotonVerYa>
+                            <BotonVerMas className="mt-5 m-1"><FiPlus className="m-1" /> Ver mas</BotonVerMas>
+                        </div>
                     </Carousel.Caption>
                 </CarouselLocalImg>
                 <CarouselLocalImg>
                     <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlu-5sicFuHii8BAVf-lwWzS0D4bOJ00mHAQ&usqp=CAU"
+                    src="https://www.themoviedb.org/t/p/original/8QSZAVBSFwW7q3tZOURjJGSpGjS.jpg"
                     alt="Third slide"
                     />
 
                     <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <div className="d-flex flex-direction-row">
+                            <BotonVerYa className="mt-5 m-1"><FaPlay className="m-1" /> Ver ahora </BotonVerYa>
+                            <BotonVerMas className="mt-5 m-1"><FiPlus className="m-1" /> Ver mas</BotonVerMas>
+                        </div>
                     </Carousel.Caption>
                 </CarouselLocalImg>
             </CarouselLocal>
