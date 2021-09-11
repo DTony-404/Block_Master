@@ -4,6 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Description from '../components/Description'
 
+
 export default class ListContainer extends Component {
     constructor(props){
         super(props)
@@ -86,20 +87,21 @@ export default class ListContainer extends Component {
                             </i>
                     </button>  
                     {
-                    this.state.peli.map((movie) => 
+                    this.state.peli.map((movie) =>
                         <ClasiCards background = {movie.potster} border = {movie.color} onClick={() => (this.description(movie))}>
                             <div>
                                 <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1631311329/BlockMaster/Vector_th1qzv.png" alt="" />
                                 <span>{movie.puntuacion}</span>
                             </div>
                         </ClasiCards>
+                        
                     )
                     }
                     {
                         this.mandarEstado !== {} && (
                             <Contenedor descripciones={this.state.descripciones}>
                                 <BotonX onClick={() => this.borrarDescription()}><VscChromeClose /></BotonX>
-                                <Description descripcion={this.state.descripcionesPeli} />
+                                <Description key={this.state.descripcionesPeli.titulo} descripcion={this.state.descripcionesPeli} />
                             </Contenedor>
                         )
                     }

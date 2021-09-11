@@ -60,8 +60,8 @@ export default class Description extends Component {
             {
                 this.state.btnVerYa === true && (
                     <ContenedorVide>
-                    <BotonX onClick={this.handleDejarDeVer}><VscChromeClose /></BotonX>
-                    <iframe width="860" height="515" id="trailers" src={trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <BotonX onClick={this.handleDejarDeVer}><VscChromeClose /></BotonX>
+                        <iframe width="860" height="515" id="trailers" src={trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </ContenedorVide >
                 )
             }

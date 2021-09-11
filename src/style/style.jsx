@@ -175,6 +175,7 @@ position: fixed;
 background-color:rgb(0, 0, 0, 0.9);
 z-index:998;
 top: 0px;
+left: 0px;
 `
 export const ContenedorVide = styled(Contenedor)`
 display: flex;
