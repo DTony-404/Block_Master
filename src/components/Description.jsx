@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BoxDescription, BoxImg, PuntuacionImg, BoxPuntuacionImg} from '../style/style'
+import {BoxDescription, BoxImg, BoxPuntuacionImg, BotonVerYa} from '../style/style'
 
 export default class Description extends Component {
     constructor(props) {
@@ -22,6 +22,7 @@ export default class Description extends Component {
             <BoxImg>
             <h1 className="text-light">{titulo}</h1>
             <span className="text-light">{descripcion}</span>
+            <div><BotonVerYa className="text-center">LOLA</BotonVerYa></div>
             </BoxImg>
             {/* <iframe width="560" height="315" id="trailers" src={trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
         </BoxDescription>

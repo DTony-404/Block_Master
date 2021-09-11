@@ -281,11 +281,30 @@ border-radius: 0px 40px 40px 0px;
     left: 44px;
     top: 2px;
 }
-
 `
-export const PuntuacionImg = styled.div`
-position: absolute;
-left: 10%;
-top: 110px;
-transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
+
+export const BotonVerYa = styled(Button)`
+background-color: yellow;
+color: #000000;
+border: #000000;
+width: 274.98px;
+height: 30px;
+
+display: flex;
+flex-direction: row;
+align-items:center;
+justify-content: center;
+padding: 0px;
+
+position: static;
+left: 0%;
+right: 0%;
+top: 85.54%;
+bottom: 0%;
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 40px 0px;
 `
