@@ -145,23 +145,25 @@ export const CarouselLocalImg = styled(Carousel.Item)`
 // Cards 
 
 export const BoxContainerCards = styled.div`
-width: 80vw;
+width: 100vw;
 height: 50vh;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
+justify-content: center;
 `
 export const ClasiCards = styled.div`
 background-image: url("${props => props.background}");
 background-size: 220px 330px;
 height: 330px;
 width: 220px;
-margin: 24px;
+margin: 10px;
 border-radius: 8px;
 border: 3px solid #0F0E17;
 
 & > div {
-    border: 0.1px solid rgba(247, 202, 24, 0.5);
+    border: 1px solid;
+    border-color: ${props => props.border};
     height:54px;
     width: 114px;
     position: relative;
