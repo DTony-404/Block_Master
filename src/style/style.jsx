@@ -215,7 +215,7 @@ justify-content: center;
 align-items: center;
 align-content: center;
 position: fixed;
-background-color:rgb(0, 0, 0, 0.8);;
+background-color:rgb(0, 0, 0, 0.9);;
 z-index:999;
 top: 0px;
 `
@@ -235,4 +235,57 @@ height: auto;
 width: 100vw;
 position: relative;
 background-color: transparent;
+display: flex;
+`
+export const BoxImg = styled.div`
+width: 45vw;
+height: 50vh;
+& > img {
+    width: 28vw;
+    height: 28vh;
+    position: relative;
+    left: 70px;
+    transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
+    border-radius: 9.78169px;
+}
+`
+export const BoxPuntuacionImg = styled.div`
+position: absolute;
+left: 5.5%;
+top: 100px;
+transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
+background-color: rgb(0, 0, 0, 0.5);
+border-top: 2px solid ${props => props.border};
+border-bottom: 2px solid ${props => props.border};
+border-right: 2px solid ${props => props.border};
+height:44px;
+width: 144px;
+border-radius: 0px 40px 40px 0px;
+
+& > img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: -4.5px;
+    left: 18px;
+}
+& > span {
+    font-size: 28px;
+    color:#FFFFFE;
+    text-align: center;
+    position: relative;
+    line-height: 34px;
+    font-family: Montserrat;
+    letter-spacing: 0.01em;
+    font-weight: bold;
+    left: 44px;
+    top: 2px;
+}
+
+`
+export const PuntuacionImg = styled.div`
+position: absolute;
+left: 10%;
+top: 110px;
+transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
 `
