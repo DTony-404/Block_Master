@@ -14,18 +14,15 @@ export default class ListContainer extends Component {
             filtros: []
         }
     }
-
     async componentDidMount(){
         this.obtenerApi()
     }
-    
     async obtenerApi(){
         const url = "https://api-block-master.herokuapp.com/Peliculas/"
         const res = await fetch(url)
         const data = await res.json()
         this.setState({peli:data})
     }
-
     async filtro(){
         const pelis = []
         if(this.props.search !== ''){
@@ -42,7 +39,6 @@ export default class ListContainer extends Component {
            this.obtenerApi()
         }
     }
-
     description(e){
         this.setState({
             descripciones: 'flex',
@@ -65,7 +61,7 @@ export default class ListContainer extends Component {
     }
     render() {
         return (
-            <BoxContainerCards>
+            <BoxContainerCards className="mb-5">
                 <button onClick={() => this.filtro()}>
                         <i>
                         <BiSearch />

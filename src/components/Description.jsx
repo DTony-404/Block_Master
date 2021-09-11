@@ -1,13 +1,37 @@
 import React, { Component } from 'react'
-import {BoxDescription, BoxImg, BoxPuntuacionImg, BotonVerYa} from '../style/style'
+import { VscChromeClose } from "react-icons/vsc";
+import { FiPlus } from "react-icons/fi";
+import { FaPlay } from "react-icons/fa";
+
+import {BoxDescription,
+        BoxImg,
+        BoxPuntuacionImg,
+        BotonVerYa,
+        BotonVerMas,
+        ContenedorVide,
+        BotonX
+        } from '../style/style'
 
 export default class Description extends Component {
     constructor(props) {
         super(props);
         this.state = {
           menuOptions: [],
+          btnVerYa: false
         };
       }
+
+    handleVer = () => {
+        this.setState({
+            btnVerYa: true
+        })
+    }
+    handleDejarDeVer = () => {
+        this.setState({
+            btnVerYa: false
+        })
+    }
+
     render(){
         const {titulo, potster, trailer, descripcion, puntuacion, color} = this.props.descripcion
     return(
@@ -22,9 +46,25 @@ export default class Description extends Component {
             <BoxImg>
             <h1 className="text-light">{titulo}</h1>
             <span className="text-light">{descripcion}</span>
-            <div><BotonVerYa className="text-center">LOLA</BotonVerYa></div>
+            <div className="d-flex flex-direction-row">
+                <BotonVerYa className="m-3">
+                    <FaPlay className="m-1" /> 
+                    VER AHORA
+                </BotonVerYa>
+                <BotonVerMas onClick={this.handleVer} className="m-3">
+                    <FiPlus className="m-1" />
+                    VER DESPUÉS 
+                    </BotonVerMas>
+            </div>
             </BoxImg>
-            {/* <iframe width="560" height="315" id="trailers" src={trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+            {
+                this.state.btnVerYa === true && (
+                    <ContenedorVide>
+                    <BotonX onClick={this.handleDejarDeVer}><VscChromeClose /></BotonX>
+                    <iframe width="860" height="515" id="trailers" src={trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </ContenedorVide >
+                )
+            }
         </BoxDescription>
     )
 }

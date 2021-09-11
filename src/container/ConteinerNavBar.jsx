@@ -11,7 +11,8 @@ export default class NavBarTop extends Component{
     constructor(){
         super()
         this.state = {
-            "search": ''
+            "search": '',
+            "peliculas": 'todas'
         }
     }
 
@@ -20,6 +21,23 @@ export default class NavBarTop extends Component{
             search: target.value
         })
     }
+    handleTodas = async () => {
+        await this.setState({
+            peliculas: 'todas'
+        })
+    }
+
+    handleMasVistas = async () => {
+        await this.setState({
+            peliculas: 'mas'
+        })
+    }
+    handleMenosVistas = async () => {
+        await this.setState({
+            peliculas: 'menos'
+        })
+    }
+
     render(){
     return(
             <div>
@@ -27,15 +45,15 @@ export default class NavBarTop extends Component{
                 <Container>
                     <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1630984698/BlockMaster/logo-blockBuster_daxs55.svg" alt="" />
                     <Navbar.Brand>
-                        <a href="/">Todas</a>
+                        <p className="text-light" onClick={this.handleTodas}>Todas</p>
                     </Navbar.Brand>
                     <Navbar.Brand>
-                        <a href="/">
+                        <p className="text-light" onClick={this.handleMasVistas}>
                         Más valoradas
-                        </a>
+                        </p>
                     </Navbar.Brand>
                     <Navbar.Brand>
-                        <a href="/">Menos valoradas</a>
+                        <p className="text-light" onClick={this.handleMenosVistas}>Menos valoradas</p>
                     </Navbar.Brand>
 
                     <BoxSearch>
@@ -55,10 +73,31 @@ export default class NavBarTop extends Component{
 
             <SectionCarrusel />
 
-            <ListContainer
-                key={"lola"}
-                search={this.state.search}
-            />
+            {
+                this.state.peliculas === 'todas' &&(
+                    <ListContainer
+                        search={this.state.search}
+                        seccion={this.state.peliculas}
+                    />
+                )
+            }
+            {
+                this.state.peliculas === 'mas' &&(
+                    <ListContainer
+                    search={this.state.search}
+                    seccion={this.state.peliculas}
+                />
+                )
+            }
+            {
+                this.state.peliculas === 'menos' &&(
+                    <ListContainer
+                    search={this.state.search}
+                    seccion={this.state.peliculas}
+                />
+                )
+            }
+
          </div>
     )}
 }

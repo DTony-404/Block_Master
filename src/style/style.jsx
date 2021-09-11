@@ -49,7 +49,7 @@ background-color: #0F0E17;
 height: 112px;
 width: 100vw;
 position: fixed;
-z-index: 997;
+z-index: 996;
 `
 
 export const BoxSearch = styled.div`
@@ -159,7 +159,7 @@ justify-content: center;
     background-color: #FED941;
     margin-right: 10px;
     position: fixed;
-    z-index: 998;
+    z-index: 997;
     top: 38px;
     right: 150px;
 }
@@ -215,10 +215,14 @@ justify-content: center;
 align-items: center;
 align-content: center;
 position: fixed;
-background-color:rgb(0, 0, 0, 0.9);;
-z-index:999;
+background-color:rgb(0, 0, 0, 0.9);
+z-index:998;
 top: 0px;
 `
+export const ContenedorVide = styled(Contenedor)`
+display: flex;
+`
+
 export const BotonX = styled.button`
 height: 100px;
 width: 100px;
@@ -251,8 +255,8 @@ height: 50vh;
 `
 export const BoxPuntuacionImg = styled.div`
 position: absolute;
-left: 5.5%;
-top: 100px;
+left: 7.5vw;
+top: 12vh;
 transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0);
 background-color: rgb(0, 0, 0, 0.5);
 border-top: 2px solid ${props => props.border};
@@ -284,9 +288,9 @@ border-radius: 0px 40px 40px 0px;
 `
 
 export const BotonVerYa = styled(Button)`
-background-color: yellow;
+background-color: #FED941;
 color: #000000;
-border: #000000;
+border: 1px solid #000000;
 width: 274.98px;
 height: 30px;
 
@@ -307,4 +311,23 @@ order: 1;
 align-self: stretch;
 flex-grow: 0;
 margin: 40px 0px;
+
+&:hover{
+    background-color: #FED941;
+    color: #000000;
+    border: 1px solid #000000;
+    transform: scale(1.05)
+}
+`
+export const BotonVerMas = styled(BotonVerYa)`
+width: 150px;
+background-color: #0F0E17;
+color: #FED941;
+border: 1px solid #FED941;
+
+&:hover{
+    background-color: #0F0E17;
+    color: #FED941;
+    border: 1px solid #FED941;
+}
 `
