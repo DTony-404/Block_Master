@@ -8,23 +8,12 @@ export default class Description extends Component {
           menuOptions: [],
         };
       }
-
-    async componentDidMount(){
-        console.log(this.props.descripcionesPeli)
-        if(this.props.descripcionesPeli !== {}){
-            console.log("nopasonimierda")
-        }else{
-            this.setState({
-                menuOptions: this.props.descripcionesPeli
-            })
-        }
-    }
     render(){
-        
+        console.log(this.props.descripcion)        
     return(
-        <BoxDescription>
-            <h2>{this.state.menuOptions}</h2>
-        </BoxDescription>
+        <div>
+
+        </div>
     )
 }
 }

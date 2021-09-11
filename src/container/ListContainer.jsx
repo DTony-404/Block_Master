@@ -48,7 +48,15 @@ export default class ListContainer extends Component {
             descripciones: 'flex',
             descripcionesPeli:e
         })
-        console.log(this.state.descripcionesPeli)
+        this.mandarEstado(e)
+    }
+    mandarEstado(e){
+        if(this.state.descripcionesPeli !== {}){
+            return true
+        }else{
+            this.descripcion(e)
+        }
+
     }
     borrarDescription(){
         this.setState({
@@ -73,22 +81,15 @@ export default class ListContainer extends Component {
                     </ClasiCards>
                 )
                 }
-                <Contenedor descripciones={this.state.descripciones}>
-                    <BotonX onClick={() => this.borrarDescription()}><VscChromeClose /></BotonX>
-
-                        <Description descripcion={this.state.descripcionesPeli}  />
-                    {/* {
-                        
-                        this.state.descripcionesPeli.find((movie,index) => {
-                            return(
-                                <Description
-                                    key={`${movie}-${index}`}
-                                    movies={movie}
-                                />
-                            )
-                        })
-                    }*/}
-                </Contenedor>
+                {
+                    this.mandarEstado !== {} && (
+                        <Contenedor descripciones={this.state.descripciones}>
+                            <BotonX onClick={() => this.borrarDescription()}><VscChromeClose /></BotonX>
+                            <Description descripcion={this.state.descripcionesPeli} />
+                        </Contenedor>
+                    )
+                }
+                    <mandarEstado />
             </BoxContainerCards>
         )
     }
