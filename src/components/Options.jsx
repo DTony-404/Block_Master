@@ -11,7 +11,7 @@ export default class Options extends Component {
                     <h3 className="text-light m-3">!Bienvenido al area de opciones¡</h3>
                     <h6 className="text-light m-4">¿Que deseas Hacer?</h6>
                     <Link
-                     to="/editar"
+                     to="/editarPerfil"
                      className="text-warning mt-2">Editar Perfil</Link>
                      <Link
                         to="/login"

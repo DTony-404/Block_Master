@@ -4,7 +4,7 @@ import { Container, Navbar } from "react-bootstrap";
 import { BoxSearch, BoxBackgroun, BottonInicio } from '../style/style'
 import ListContainer from './ListContainer'
 import SectionCarrusel from '../components/SectionCarrusel'
-
+import { FaUserCircle } from 'react-icons/fa';
 import React, { Component } from 'react'
 
 export default class NavBarTop extends Component{
@@ -66,26 +66,8 @@ export default class NavBarTop extends Component{
                     <Link
                                 to="/login"
                             >
-                                <BottonInicio>c</BottonInicio>
+                                <BottonInicio className="text-dark"><FaUserCircle/></BottonInicio>
                     </Link>
-                    {/* {
-                        this.User.email === '' && (
-                            <Link
-                                to="/login"
-                            >
-                                <BottonInicio>c</BottonInicio>
-                            </Link>
-                        )
-                    }
-                    {
-                        this.User.email !== '' && (
-                            <Link
-                            to="/editar"
-                        >
-                            <BottonInicio>L</BottonInicio>
-                        </Link>
-                        )
-                    } */}
                     </Navbar.Brand>
                 </Container>
             </BoxBackgroun>

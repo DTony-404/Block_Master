@@ -9,6 +9,7 @@ import Login from '../components/Login'
 import Registro from '../components/Registro'
 import App from '../App'
 import Options from '../components/Options'
+import EditAndDelete from '../components/EditAndDelete'
 
 export default class AppRouter extends Component {
     render() {
@@ -17,6 +18,7 @@ export default class AppRouter extends Component {
                 <Switch>
                     <Route exact path="/registro" component={Registro} />
                     <Route exact path="/editar" component={Options} />
+                    <Route exact path="/editarPerfil" component={EditAndDelete} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/" component={App} />
                 </Switch>
