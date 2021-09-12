@@ -24,29 +24,31 @@ export default class ListContainer extends Component {
         const url = "https://api-block-master.herokuapp.com/Peliculas/"
         const res = await fetch(url)
         const data = await res.json()
-        const mayor = [];
-        const menor = []
         console.log(this.state.scroll)
-        
         if (this.state.scroll < data.length) {
             data[this.state.scroll].pelis.map((mostrar) => {
+                
                 if (this.props.seccion === "mas") {
                     if (mostrar.puntuacion > 7) {
-                        mayor.unshift(mostrar)
-                        this.setState({ peli: mayor })
+                        this.setState({ peli: this.state.peli.concat(mostrar)})
                     }
-                } else if (this.props.seccion === 'menos') {
+                } else if (this.props.seccion === "menos") {
                     if (mostrar.puntuacion < 7) {
-                        menor.unshift(mostrar)
-                        this.setState({ peli: menor })
+                        this.setState({ peli: this.state.peli.concat(mostrar) })
                     }
-                } else if (this.props.seccion === 'todas') {
-                    this.setState({ peli: data[this.state.scroll].pelis })
+                } else if (this.props.seccion === "todas") {
+                    if(mostrar.puntuacion > 0){
+                        this.setState({ peli: this.state.peli.concat(mostrar) })
                 }
+                }
+
             })
+
         }else{
+
             this.setState({scroll:0})
             this.obtenerApi()
+
         }
     }
   
@@ -111,8 +113,9 @@ export default class ListContainer extends Component {
                             </ClasiCards>
                         )
                     }
-                    <button className="m-5" onClick={() => this.scrollInfinite()}>LOLAaaaaaaaaaaaaaaaaaa</button>
-                    <h1 className="text-light">{this.state.scroll}</h1>
+                    <div className="text-center justify-content-center align-items-center">
+                    <p className="text-light p-5 text-center" onClick={() => this.scrollInfinite()}>Ver mas</p>
+                    </div>
                     {
                         this.mandarEstado !== {} && (
                             <Contenedor descripciones={this.state.descripciones}>
