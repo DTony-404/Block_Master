@@ -30,6 +30,7 @@ export default class Login extends Component {
 
     iniciarSesion = () => {
         alert(`Bienvenido ${this.state.form.email}`)
+        localStorage.setItem('usuario', JSON.stringify(this.state.form))
     }
 
     handelSubmit = (e) => {
@@ -69,22 +70,28 @@ export default class Login extends Component {
                         className="btn btn-primary btn-block"
                         onClick={() => this.iniciarSesion()}
                     >
-                        Login
+                        Iniciar
                     </ButtonFrom>
 
                     <div className="">
-                        <h6 className="text-light text-center mt-3">Login with social networks</h6>
+                        <h6 className="text-light text-center mt-3">Iniciar con una red distinta</h6>
 
                         <ButtonGoogle className="google-btn btn-primary">
                             <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-                            <b> Sign in with google</b>
+                            <b> Iniciar con Google</b>
                         </ButtonGoogle>
                     </div>
-                        <Link
+                    <Link
                         to="/registro"
                         className="mt-3 text-light"
                         >
-                        Create new account
+                        Crear una cuenta
+                    </Link>
+                    <Link
+                        to="/editar"
+                        className="mt-1 text-light"
+                        >
+                        Configurar cuenta existente
                     </Link>
                     <Link
                         className="mt-1 text-light"

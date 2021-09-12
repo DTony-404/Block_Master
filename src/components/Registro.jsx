@@ -77,7 +77,7 @@ export default class Registro extends Component {
                             to="/login"
                             className="text-light"
                         >
-                            Already registered?
+                            Ya estas registrado
                         </Link>
                         </ BoxFormContent>
                 </form>

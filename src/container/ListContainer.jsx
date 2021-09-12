@@ -14,10 +14,11 @@ export default class ListContainer extends Component {
             peli: [],
             filtros: [],
             scroll: 0,
-            nameSection: "Todas las peliculas"
+            nameSection: "Todas las peliculas",
+            usuario: []
         }
     }
-
+    
     async componentDidMount() {
         this.obtenerApi()
     }
@@ -25,7 +26,6 @@ export default class ListContainer extends Component {
         const url = "https://api-block-master.herokuapp.com/Peliculas/"
         const res = await fetch(url)
         const data = await res.json()
-        console.log(data)
         if (this.state.scroll < data.length) {
             data[this.state.scroll].pelis.map((mostrar) => {
                 if (this.props.seccion === "mas") {

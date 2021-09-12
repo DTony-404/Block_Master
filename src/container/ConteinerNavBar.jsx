@@ -12,10 +12,11 @@ export default class NavBarTop extends Component{
         super()
         this.state = {
             "search": '',
-            "peliculas": 'todas'
+            "usuario": false,
+            "peliculas": 'todas',
         }
     }
-
+    
     handleChange = async ({target}) => {
         await this.setState({
             search: target.value
@@ -63,10 +64,28 @@ export default class NavBarTop extends Component{
 
                     <Navbar.Brand>
                     <Link
-                        to="/login"
-                    >
-                        <BottonInicio></BottonInicio>
+                                to="/login"
+                            >
+                                <BottonInicio>c</BottonInicio>
                     </Link>
+                    {/* {
+                        this.User.email === '' && (
+                            <Link
+                                to="/login"
+                            >
+                                <BottonInicio>c</BottonInicio>
+                            </Link>
+                        )
+                    }
+                    {
+                        this.User.email !== '' && (
+                            <Link
+                            to="/editar"
+                        >
+                            <BottonInicio>L</BottonInicio>
+                        </Link>
+                        )
+                    } */}
                     </Navbar.Brand>
                 </Container>
             </BoxBackgroun>
