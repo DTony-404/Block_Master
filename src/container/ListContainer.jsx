@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { BoxContainerCards, ClasiCards, Contenedor, BotonX, BoxContentConteiner, BoxTexto } from '../style/style'
-import { BiSearch } from "react-icons/bi";
+import { BoxContainerCards, ClasiCards, Contenedor, BotonX, BoxContentConteiner, BoxTexto, BoxVerMas } from '../style/style'
+import { BiSearch, BiPlus } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Description from '../components/Description'
 
@@ -117,9 +117,10 @@ export default class ListContainer extends Component {
                             </ClasiCards>
                         )
                     }
-                    <div className="text-center justify-content-center align-items-center">
-                    <p className="text-light p-5 text-center" onClick={() => this.scrollInfinite()}>Ver mas</p>
-                    </div>
+                    <BoxVerMas type="button" className="text-center justify-content-center align-items-center"  onClick={() => this.scrollInfinite()}>
+                    <h1 className="p-5 text-center">Ver mas</h1>
+                    <h1 ><BiPlus /></h1>
+                    </BoxVerMas>
                     {
                         this.mandarEstado !== {} && (
                             <Contenedor descripciones={this.state.descripciones}>

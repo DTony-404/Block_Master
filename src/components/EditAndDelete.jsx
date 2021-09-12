@@ -66,15 +66,14 @@ export default class EditAndDelete extends Component {
         return (
             <BoxForm>
                 <BoxFormContent>
+                    <h1 className="text-light">Edita tu perfil</h1>
                     <InputForm type="text" placeholder="Nombre" name="nombre" onChange={this.handleChange} value={form?form.userName:''} />
                     <InputForm type="text" placeholder="Nombre de usuario" name="username" onChange={this.handleChange} value={form?form.userName:''} />
                     <InputForm type="text" placeholder="Contraseña" name="password" onChange={this.handleChange} value={form?form.passWord:''} />
 
-                    <div>
                     <ButtonFrom className="m-2" onClick={() => this.peticionGet()}>Buscar Usuario</ButtonFrom>
                     <ButtonFrom className="m-2" onClick={() => this.peticionPutDefinitiva()}>Editar Usuario</ButtonFrom>
                     <ButtonFrom className="m-2" onClick={() => this.peticionDelete()}>Borrar Usuario</ButtonFrom>
-                    </div>
                     <Link
                     className="mt-3"
                     to="/"

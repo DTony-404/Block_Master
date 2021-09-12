@@ -52,6 +52,11 @@ border: 1px solid #FFA903;
 border-radius: 20px;
 padding: 20px;
 background-color: #000000;
+@media (max-width: 1000px){
+    width: 80vw;
+    padding: 0px;
+    left: -10px;
+}
 `
 export const InputForm = styled(Form.Control)`
 width: 70vw;
@@ -65,7 +70,7 @@ width: 25vw;
 export const ButtonFrom = styled(Button)`
 background-color: #0E3FA9;
 color: #FFA903;
-width: 25vw;
+width: 55vw;
 
 @media(min-width: 1000px){
 width: 15vw;
@@ -142,7 +147,6 @@ width: 220px;
 margin: 10px;
 border-radius: 8px;
 border: 3px solid #0F0E17;
-
 & > div {
     border-top: 2px solid ${props => props.border};
     border-bottom: 2px solid ${props => props.border};
@@ -174,6 +178,23 @@ border: 3px solid #0F0E17;
         left: 44px;
         top: 8px;
     }
+}
+`
+export const BoxVerMas = styled.div`
+background: rgba(2, 120, 239, 0.5);
+height: 330px;
+width: 220px;
+margin: 10px;
+border-radius: 8px;
+border: 3px solid #0F0E17;
+margin-bottom: 20px;
+transition: 0.5s;
+color: #fff;
+
+&:hover{
+background: rgba(255, 233, 35, 0.8);
+transform: scale(1.02);
+color: #000000;
 }
 `
 // Description
