@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BoxContainerCards, ClasiCards, Contenedor, BotonX, BoxContentConteiner } from '../style/style'
+import { BoxContainerCards, ClasiCards, Contenedor, BotonX, BoxContentConteiner, BoxTexto } from '../style/style'
 import { BiSearch } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Description from '../components/Description'
@@ -13,7 +13,8 @@ export default class ListContainer extends Component {
             descripcionesPeli: {},
             peli: [],
             filtros: [],
-            scroll: 0
+            scroll: 0,
+            nameSection: "Todas las peliculas"
         }
     }
 
@@ -24,17 +25,16 @@ export default class ListContainer extends Component {
         const url = "https://api-block-master.herokuapp.com/Peliculas/"
         const res = await fetch(url)
         const data = await res.json()
-        console.log(this.state.scroll)
+        console.log(data)
         if (this.state.scroll < data.length) {
             data[this.state.scroll].pelis.map((mostrar) => {
-                
                 if (this.props.seccion === "mas") {
                     if (mostrar.puntuacion > 7) {
-                        this.setState({ peli: this.state.peli.concat(mostrar)})
+                        this.setState({ peli: this.state.peli.concat(mostrar), nameSection: "Peliculas mas valoradas"})
                     }
                 } else if (this.props.seccion === "menos") {
                     if (mostrar.puntuacion < 7) {
-                        this.setState({ peli: this.state.peli.concat(mostrar) })
+                        this.setState({ peli: this.state.peli.concat(mostrar), nameSection: "Peliculas menos valoradas" })
                     }
                 } else if (this.props.seccion === "todas") {
                     if(mostrar.puntuacion > 0){
@@ -97,12 +97,16 @@ export default class ListContainer extends Component {
     render() {
         return (
             <BoxContentConteiner>
+                <BoxTexto>
+                    <h1 className="p-5 text-left text-light">{this.state.nameSection}</h1>
+                </BoxTexto>
                 <BoxContainerCards className="mb-5">
                     <button onClick={() => this.filtro()}>
                         <i>
                             <BiSearch />
                         </i>
                     </button>
+
                     {
                         this.state.peli.map((movie) =>
                             <ClasiCards background={movie.potster} border={movie.color} onClick={() => (this.description(movie))}>

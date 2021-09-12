@@ -80,7 +80,7 @@ justify-content: center;
 `
 export const CarouselLocal = styled(Carousel)`
 height: 320px;
-width: 98vw;
+width: 93vw;
 margin-top: 120px;
 display: flex;
 border-radius: 20px;
@@ -89,12 +89,15 @@ export const CarouselLocalImg = styled(Carousel.Item)`
 & > img{
     border-radius: 20px;
     height: 320px;
-    width: 98vw;
+    width: 93vw;
 }
 `
 // Cards 
+export const BoxTexto = styled.div`
+width: 98vw;
+`
 export const BoxContentConteiner = styled.div`
-width: 100vw;
+width: 98vw;
 height: 50vh;
 display: flex;
 flex-direction: row;

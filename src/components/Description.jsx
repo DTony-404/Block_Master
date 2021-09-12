@@ -33,7 +33,7 @@ export default class Description extends Component {
     }
 
     render(){
-        const {titulo, potster, trailer, descripcion, puntuacion, color} = this.props.descripcion
+        const {titulo, potster, trailer, descripcion, puntuacion, color, fecha} = this.props.descripcion
     return(
         <BoxDescription>
             <BoxImg>
@@ -45,7 +45,8 @@ export default class Description extends Component {
             </BoxImg>
             <BoxImg>
             <h1 className="text-light">{titulo}</h1>
-            <span className="text-light">{descripcion}</span>
+            <h6 className="text-light">{descripcion}</h6>
+            <h8 className="text-secondary">{fecha}</h8>
             <div className="d-flex flex-direction-row">
                 <BotonVerYa className="m-3">
                     <FaPlay className="m-1" /> 
