@@ -4,6 +4,7 @@ import uuid from 'react-uuid'
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {BoxForm, InputForm, ButtonFrom, BoxFormContent} from '../style/style'
+import swal from 'sweetalert';
 
 const baseUrl = "https://api-block-master.herokuapp.com/usuario"
 
@@ -43,12 +44,12 @@ export default class Registro extends Component {
                     username: this.state.form.username,
                     password: md5(this.state.form.password)
                 }).then(response => {
-                    alert('Usuario Registrado')
+                    swal("Bien hecho", "Tu usuario a sido creado", "success")
                 }).catch(error => {
-                    alert('Usuario no existe')
+                    swal('Algo a fallado', "Puede ser un problema con nuestra servidor, Intentelo de nuevo", "success")
                     console.log(error.message)
                 })
-            }else{alert('llene todos los campos')}
+            }else{swal('Algo a fallado', "Verifique que todos los datos esten llenos", "warning")}
         }
         return (
             <BoxForm>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {BoxForm, InputForm, ButtonFrom, ButtonGoogle, BoxFormContent} from '../style/style'
 
+import swal from 'sweetalert';
 export default class Login extends Component {
 
     constructor(props){
@@ -29,7 +30,7 @@ export default class Login extends Component {
     }
 
     iniciarSesion = () => {
-        alert(`Bienvenido ${this.state.form.email}`)
+        swal(`Bienvenido ${this.state.form.email}`, "Nos encanta tenerte de nuevo con nosotros", "success")
         localStorage.setItem('usuario', JSON.stringify(this.state.form))
     }
 
