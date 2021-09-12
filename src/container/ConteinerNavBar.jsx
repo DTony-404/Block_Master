@@ -1,7 +1,7 @@
 // import { NavBarLocal } from "../style/style";
 import {Link} from 'react-router-dom'
 import { Container, Navbar } from "react-bootstrap";
-import { BoxSearch, BoxBackgroun } from '../style/style'
+import { BoxSearch, BoxBackgroun, BottonInicio } from '../style/style'
 import ListContainer from './ListContainer'
 import SectionCarrusel from '../components/SectionCarrusel'
 
@@ -57,7 +57,7 @@ export default class NavBarTop extends Component{
                     </Navbar.Brand>
 
                     <BoxSearch>
-                    <input placeholder="search" onChange={this.handleChange} />
+                    <input placeholder="Busca tu pelicula favorita" onChange={this.handleChange} />
                       
                     </BoxSearch>
 
@@ -65,7 +65,7 @@ export default class NavBarTop extends Component{
                     <Link
                         to="/login"
                     >
-                        Login
+                        <BottonInicio></BottonInicio>
                     </Link>
                     </Navbar.Brand>
                 </Container>

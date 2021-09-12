@@ -4,8 +4,8 @@ import {BoxForm, InputForm, ButtonFrom, ButtonGoogle, BoxFormContent} from '../s
 
 export default class Login extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             form: {
                 email: '',
@@ -14,6 +14,10 @@ export default class Login extends Component {
         }
     }
     
+    async componentDidMount(){
+        console.log(this.props.lola)
+    }
+
     handleChange = async e => {
         await this.setState({
             form: {

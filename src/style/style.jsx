@@ -35,6 +35,16 @@ margin-top: 20px;
 position:relative;
 left: 15vw;
 `
+export const BottonInicio = styled(Button)`
+height: 38px;
+width: 38px;
+background-color: #FED941;
+border: none;
+&:hover{
+    background-color:#FFA903;
+    transform: scale(1.05);
+}
+`
 export const BoxFormContent = styled(BoxForm)`
 height: auto;
 width: 45vw;

@@ -8,13 +8,16 @@ import {
 import Login from '../components/Login'
 import Registro from '../components/Registro'
 import App from '../App'
+import Options from '../components/Options'
 export default class AppRouter extends Component {
     render() {
+        const nombre = "lola"
         return (
             <Router>
                 <Switch>
                     <Route exact path="/registro" component={Registro} />
-                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/login" component={Options} />
+                    <Route exact path="/editarUsername" component={Login} />
                     <Route exact path="/" component={App} />
                 </Switch>
             </Router>
