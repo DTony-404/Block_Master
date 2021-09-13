@@ -48,7 +48,7 @@ export default class Description extends Component {
             <h6 className="text-light">{descripcion}</h6>
             <h8 className="text-secondary">{fecha}</h8>
             <div className="d-flex flex-direction-row">
-                <BotonVerYa className="m-3">
+                <BotonVerYa onClick={this.handleVer} className="m-3">
                     <FaPlay className="m-1" /> 
                     VER AHORA
                 </BotonVerYa>

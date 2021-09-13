@@ -15,7 +15,8 @@ export default class ListContainer extends Component {
             filtros: [],
             scroll: 0,
             nameSection: "Todas las peliculas",
-            usuario: []
+            usuario: [],
+            encontro: true,
         }
     }
     
@@ -60,12 +61,17 @@ export default class ListContainer extends Component {
                 if (exp.test(filtra.titulo)) {
                     pelis.unshift(filtra)
                     this.setState({
-                        peli: pelis
+                        peli: pelis,
+                        encontro:true
                     })
+                }else{
+                    console.log('hola')
+                    this.setState({encontro:false})
                 }
             })
         } else {
             this.obtenerApi()
+            this.setState({encontro:true})
         }
     }
     description(e) {
@@ -106,8 +112,9 @@ export default class ListContainer extends Component {
                             <BiSearch />
                         </i>
                     </button>
-
+                    
                     {
+                        this.state.encontro === true &&(
                         this.state.peli.map((movie) =>
                             <ClasiCards background={movie.potster} border={movie.color} onClick={() => (this.description(movie))}>
                                 <div>
@@ -115,12 +122,26 @@ export default class ListContainer extends Component {
                                     <span>{movie.puntuacion}</span>
                                 </div>
                             </ClasiCards>
+                        ))
+                    }
+                    {
+                        this.state.encontro === true &&(
+                            <BoxVerMas type="button" className="text-center justify-content-center align-items-center"  onClick={() => this.scrollInfinite()}>
+                                <h1 className="p-5 text-center">Ver mas</h1>
+                                <h1 ><BiPlus /></h1>
+                            </BoxVerMas>
+                            )
+                    }
+                    {
+                        this.state.encontro !== true &&(
+                            <BoxContentConteiner>
+                                <div>
+                                <img src="https://res.cloudinary.com/dd8jb0ikv/image/upload/v1631506897/BlockMaster/f_zfhknh.png" alt="" />
+                                <h3 className="text-light text-center">No se encontraron resultados para "{this.props.search}" </h3>
+                                </div>
+                            </BoxContentConteiner>
                         )
                     }
-                    <BoxVerMas type="button" className="text-center justify-content-center align-items-center"  onClick={() => this.scrollInfinite()}>
-                    <h1 className="p-5 text-center">Ver mas</h1>
-                    <h1 ><BiPlus /></h1>
-                    </BoxVerMas>
                     {
                         this.mandarEstado !== {} && (
                             <Contenedor descripciones={this.state.descripciones}>
