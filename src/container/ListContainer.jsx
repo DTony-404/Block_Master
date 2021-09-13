@@ -55,17 +55,17 @@ export default class ListContainer extends Component {
   
     async filtro() {
         const pelis = []
+        this.setState({encontro:true})
         if (this.props.search !== '') {
             this.state.peli.map((filtra) => {
                 const exp = new RegExp(this.props.search, 'i')
+                console.log(exp.test(filtra.titulo))
                 if (exp.test(filtra.titulo)) {
                     pelis.unshift(filtra)
                     this.setState({
                         peli: pelis,
-                        encontro:true
                     })
                 }else{
-                    console.log('hola')
                     this.setState({encontro:false})
                 }
             })
