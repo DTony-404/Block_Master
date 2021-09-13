@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { BoxContainerCards, ClasiCards, Contenedor, BotonX, BoxContentConteiner, BoxTexto, BoxVerMas } from '../style/style'
+import { BoxContainerCards, ClasiCards, Contenedor, BotonX, BoxContentConteiner, BoxTexto, BoxVerMas, InputForm, ButtonFrom} from '../style/style'
 import { BiSearch, BiPlus } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Description from '../components/Description'
-
+import axios from 'axios'
 
 export default class ListContainer extends Component {
     constructor(props) {
@@ -17,6 +17,17 @@ export default class ListContainer extends Component {
             nameSection: "Todas las peliculas",
             usuario: [],
             encontro: true,
+            create: false,
+            formNewPeli: {
+                titulo: '',
+                potster: '',
+                puntuacion: '',
+                trailer: '',
+                descripcion: '',
+                color: '',
+                fecha: ''
+            } 
+
         }
     }
     
@@ -100,6 +111,31 @@ export default class ListContainer extends Component {
         })
         this.obtenerApi()
     }
+    
+    async createPeli(){
+        this.setState({
+            create:true
+        })
+    }
+
+    async cerrarCreate(){
+        this.setState({
+            create:false
+        })
+    }
+    handleCreate = async ({target}) => {
+        await this.setState({
+            formNewPeli:{
+                ...this.state.formNewPeli, 
+                [target.name]: target.value
+            }
+        })
+    }
+    handleSubirPeli = () => {
+        this.setState({
+            peli:this.state.peli.concat(this.state.formNewPeli)
+        })
+    } 
     render() {
         return (
             <BoxContentConteiner>
@@ -125,13 +161,21 @@ export default class ListContainer extends Component {
                         ))
                     }
                     {
-                        this.state.encontro === true &&(
-                            <BoxVerMas type="button" className="text-center justify-content-center align-items-center"  onClick={() => this.scrollInfinite()}>
+                        this.state.encontro === true &&
+                            (
+                                <div className="d-flex">
+                             <BoxVerMas type="button" className="text-center justify-content-center align-items-center"  onClick={() => this.scrollInfinite()}>
                                 <h1 className="p-5 text-center">Ver mas</h1>
                                 <h1 ><BiPlus /></h1>
                             </BoxVerMas>
-                            )
+                                    <BoxVerMas onClick={() => this.createPeli()} type="button" className="text-center justify-content-center align-items-center">
+                                <h4 className="p-1 m-5 text-center">Agregar Peliculas</h4>
+                                <h1 ><BiPlus /></h1>
+                            </BoxVerMas>
+                                </div>
+                        )
                     }
+
                     {
                         this.state.encontro !== true &&(
                             <BoxContentConteiner>
@@ -142,6 +186,24 @@ export default class ListContainer extends Component {
                             </BoxContentConteiner>
                         )
                     }
+                    {
+                        this.state.create ===true && ( 
+                            <Contenedor className="d-flex flex-column justify-content-center align-items-center align-content-center">
+                                <h3 className="text-light mb-3"> Llene el formulario para subir su pelicula </h3> 
+                                <BotonX onClick={() => this.cerrarCreate()}><VscChromeClose /></BotonX>
+                                <InputForm placeholder="nombre de la pelicula" onChange={this.handleCreate} name="titulo" />
+                                <InputForm placeholder="Description" onChange={ this.handleCreate} name="descripcion"/> 
+                                <InputForm placeholder="fecha-hora" onChange={this.handleCreate} name="fecha"/> 
+                                <InputForm placeholder="puntuacion" onChange={this.handleCreate} type="number" name="puntuacion"/> 
+                                <InputForm placeholder="trailer iFrame" onChange={this.handleCreate} name="color"/>
+                                <InputForm placeholder="potster" onChange={this.handleCreate} name="potster"/>
+                                <InputForm placeholder="trailer iFrame" onChange={this.handleCreate} name="trailer"/>
+                                <ButtonFrom onClick={() => this.handleSubirPeli()}>Subir Pelicula</ButtonFrom>  
+
+                            </Contenedor>
+                        )
+                    } 
+
                     {
                         this.mandarEstado !== {} && (
                             <Contenedor descripciones={this.state.descripciones}>
