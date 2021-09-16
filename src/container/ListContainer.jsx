@@ -4,7 +4,7 @@ import { BiSearch, BiPlus } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Description from '../components/Description'
 import axios from 'axios'
-
+import uuid from 'react-uuid'
 export default class ListContainer extends Component {
     constructor(props) {
         super(props)
@@ -130,12 +130,18 @@ export default class ListContainer extends Component {
                 [target.name]: target.value
             }
         })
+            
     }
     handleSubirPeli = () => {
         this.setState({
             peli:this.state.peli.concat(this.state.formNewPeli)
         })
+        //this.handlePost()
     } 
+    //handlePost = async () => {
+       //axios.post("https://api-block-master.herokuapp.com/Peliculas/1"
+            //, this.state.peli) 
+    //}
     render() {
         return (
             <BoxContentConteiner>
@@ -195,7 +201,7 @@ export default class ListContainer extends Component {
                                 <InputForm placeholder="Description" onChange={ this.handleCreate} name="descripcion"/> 
                                 <InputForm placeholder="fecha-hora" onChange={this.handleCreate} name="fecha"/> 
                                 <InputForm placeholder="puntuacion" onChange={this.handleCreate} type="number" name="puntuacion"/> 
-                                <InputForm placeholder="trailer iFrame" onChange={this.handleCreate} name="color"/>
+                                <InputForm placeholder="Color" onChange={this.handleCreate} name="color"/>
                                 <InputForm placeholder="potster" onChange={this.handleCreate} name="potster"/>
                                 <InputForm placeholder="trailer iFrame" onChange={this.handleCreate} name="trailer"/>
                                 <ButtonFrom onClick={() => this.handleSubirPeli()}>Subir Pelicula</ButtonFrom>  
